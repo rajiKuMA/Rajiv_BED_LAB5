@@ -1,0 +1,33 @@
+server:
+  port: 8222
+#spring.datasource.username=sa
+#spring.datasource.password=welcome
+spring:
+  datasource:
+    username: sa
+    password: welcome
+    url: jdbc:h2:mem:employee_db
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" 
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+info:
+  application:
+    version: "1.0.0"
+    name: "Employee API application"      
